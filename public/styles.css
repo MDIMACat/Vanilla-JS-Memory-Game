@@ -1,0 +1,272 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #606c38;
+}
+
+.instructions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+    margin-top: 4px;
+}
+
+.instructions h2, .instructions p {
+    margin: 0.5rem 0;
+    text-align: center;
+}
+.instructions h2 {
+    margin-bottom: -5px;
+}
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  
+    grid-template-rows: repeat(3, 1fr);     
+    gap: 10px;                             
+    background-color: #fefae0;
+    border-radius: 10px;
+    width: 60%;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 2px 2px 5px #111111;
+    padding: 20px;
+  }
+  
+  .cards {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    padding: 10px;
+    box-shadow: 2px 2px 5px #55514d;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .cards img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .cards .card-image {
+    transform: rotateY(90deg);
+    transition: all ease-in 0.25s;
+    mix-blend-mode: multiply;
+  }
+  
+  .toggled .card-image {
+    transform: rotateY(0deg);
+    transition-delay: 0.25s;
+  }
+  
+
+.score-and-level {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.score {
+    display: flex;
+    align-items: center;
+}
+
+.score h2 {
+    margin: 0;
+    color: #fefae0;
+}
+
+.score p {
+    margin: 5px 0;
+    color: #000;
+    padding: 5px 15px;
+    background-color: #fefae0;
+    border-radius: 12px;
+    box-shadow: 2px 2px 5px #55514d;
+    margin-left: 10px;
+}
+
+
+
+
+.complete-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fefae0;
+    position: fixed;
+    width: 80%;
+    max-width: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #55514d;
+    padding: 20px;
+}
+
+.level-complete-buttons, .level-incomplete-buttons {
+    margin-top: 20px;
+}
+
+.level-complete-buttons button, .level-incomplete-buttons button {
+    padding: 10px 20px;
+    background-color: #dda15e;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #55514d;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.level-complete-buttons button:hover, .level-incomplete-buttons button:hover {
+    background-color: #283618;
+    color: #fefae0;
+}
+
+.level-complete-text p, .last-completed-text p {
+    margin: 0;
+}
+
+
+.reset-level-button{
+    display: flex;
+   justify-content: center;
+}
+.reset-level-button button{
+    padding: 10px 20px;
+    background-color: #dda15e;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #55514d;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.reset-level-button button:hover {
+    background-color: #283618;
+    color: #fefae0;
+}
+
+.grid-selector{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -60px;
+}
+
+.grid-rows, .grid-columns {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px 35px;   
+    width: 70px;
+    height: 15px;
+    border-radius: 10px;
+}
+
+
+#grid-submit {
+    margin-top: 10px;
+}
+
+#grid-submit button {
+    padding: 10px 20px;
+    background-color: #dda15e;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #55514d;
+    cursor: pointer;
+    margin: 5px;
+}
+
+#grid-submit button:hover {
+    background-color: #283618;
+    color: #fefae0;
+}
+
+#timer {
+    display: flex;
+    justify-content: center;    
+}
+
+#timer h3{
+    color: white;
+    font-weight: 400;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+}
+
+#timer p {
+    font-size: 20px;
+    color: white;
+    font-weight: 400;
+    margin-top: 3px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+}
+@media (max-width: 768px) {
+    .game-container {
+        width: 90%; 
+        max-width: 550px; 
+        padding: 15px;
+    }
+
+    .cards {
+        width: 80px;
+        height: 80px;
+    }
+
+    .score h2, .score p {
+        font-size: medium;
+    }
+}
+
+@media (max-width: 425px) {
+    .game-container {
+        width: 100%;
+        max-width: 320px; 
+        padding: 10px;
+    }
+
+    .instructions h2, .instructions p {
+        font-size: smaller;
+    }
+
+    .cards {
+        width: 40px;
+        height: 40px;
+    }
+
+    .score h2, .score p {
+        font-size: small;
+    }
+    .complete-container{
+        width: 80%;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 320px) {
+    .game-container {
+        width: 100%;
+        max-width: 270px; 
+        padding: 10px;
+    }
+    .cards {
+        width: 25px;
+        height: 25px;
+    }
+}
